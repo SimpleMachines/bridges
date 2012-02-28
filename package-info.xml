@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is http://code.mattzuba.com code.
+   -
+   - The Initial Developer of the Original Code is
+   - Matt Zuba.
+   - Portions created by the Initial Developer are Copyright (C) 2010-2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>slammeddime:blogbridger</id>
+	<name>BlogBridger</name>
+	<version>1.1.4</version>
+	<type>modification</type>
+
+	<install for="2.0 RC5">
+		<readme parsebbc="true">README</readme>
+		<require-file name="WordpressBridge.php" destination="$sourcedir">Install the core BlogBridger class</require-file>
+		<require-file name="WordpressUser.php" destination="$sourcedir">Install the BlogBridger User class</require-file>
+		<require-file name="WordpressPassword.php" destination="$sourcedir">Install the BlogBridger Password class</require-file>
+		<require-file name="WordpressBridge.english.php" destination="$languagedir">Language file with all language strings</require-file>
+		<require-file name="WordpressBridge.template.php" destination="$themedir">Template file for admin settings</require-file>
+		<code type="inline"><![CDATA[<?php
+			global $boarddir;
+			require_once($boarddir . '/SSI.php');
+			add_integration_function('integrate_pre_include', '$sourcedir/WordpressBridge.php');
+		]]></code>
+		<redirect type="inline" url="?action=admin;area=wordpress;sa=bridge" timeout="5000">Thank you for installing BlogBridger, you will now be redirected to the settings page.</redirect>
+	</install>
+
+	<uninstall for="2.0 RC5">
+		<code type="inline"><![CDATA[<?php
+			global $boarddir;
+			require_once($boarddir . '/SSI.php');
+			remove_integration_function('integrate_pre_include', '$sourcedir/WordpressBridge.php');
+		]]></code>
+		<remove-file name="$languagedir/WordpressBridge.english.php" />
+		<remove-file name="$themedir/WordpressBridge.template.php" />
+		<remove-file name="$sourcedir/WordpressBridge.php" />
+		<remove-file name="$sourcedir/WordpressUser.php" />
+		<remove-file name="$sourcedir/WordpressPassword.php" />
+	</uninstall>
+
+	<upgrade>
+		<readme parsebbc="true">README</readme>
+		<require-file name="WordpressBridge.php" destination="$sourcedir">Install the core BlogBridger class</require-file>
+		<require-file name="WordpressUser.php" destination="$sourcedir">Install the BlogBridger User class</require-file>
+		<require-file name="WordpressPassword.php" destination="$sourcedir">Install the BlogBridger Password class</require-file>
+		<require-file name="WordpressBridge.english.php" destination="$languagedir">Language file with all language strings</require-file>
+		<require-file name="WordpressBridge.template.php" destination="$themedir">Template file for admin settings</require-file>
+		<redirect type="inline" url="?action=admin;area=wordpress;sa=bridge" timeout="5000">Thank you for installing BlogBridger, you will now be redirected to the settings page.</redirect>
+	</upgrade>
+</package-info>
