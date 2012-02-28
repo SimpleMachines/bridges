@@ -1,0 +1,12 @@
+This package will install BlogBridger, a Wordpress/SMF bridge, in SMF.  Please
+consult http://code.mattzuba.com/blogbridger before seeking assistance in the
+SMF support topic.
+
+PHP 5.2 or greater is required to run this modification.  It is also only MySQL
+compatible.
+
+Package is released under the Mozilla Public License v1.1.
+
+Issues: http://code.mattzuba.com/blogbridger/issues
+Downloads: http://code.mattzuba.com/blogbridger/downloads
+Changesets: http://code.mattzuba.com/blogbridger/changesets
