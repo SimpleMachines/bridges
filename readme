@@ -1,0 +1,23 @@
+
+Bridges and integrations with SMF 2.0+
+
+This repository contains Open Source bridges and integrations between SMF 2.0+ and other software.
+The bridges may be developed by their authors, maintained by them, or by SMF developers.
+In every case, please refer to the following for details.
+
+Wordpress 3.0+ User Integration
+Initial developer: SlammedDime
+Project site: http://code.mattzuba.com/blogbridger
+Project official code repository (Mercurial): hg clone https://bitbucket.org/mattzuba/blogbridger
+License: Mozilla Public License 1.1
+
+Download the software as mod for SMF 2.0 RC5+
+http://custom.simplemachines.org/mods/index.php?mod=3008
+
+SMF 2.0+ - MediaWiki Integration
+Developer: SleePy, further development of code by Ryan Wagoner.
+Project official code repository (Git): https://github.com/SimpleMachines/smf-mw-auth
+git clone git@github.com:SimpleMachines/smf-mw-auth.git
+License: BSD 3-clause.
+
+
