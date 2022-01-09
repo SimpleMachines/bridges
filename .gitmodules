@@ -1,0 +1,3 @@
+[submodule "SMF-MediaWiki-auth"]
+	path = SMF-MediaWiki-auth
+	url = https://github.com/SimpleMachines/smf-mw-auth.git
